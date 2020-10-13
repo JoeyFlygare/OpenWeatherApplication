@@ -5,14 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/CSS/style.css">
     <title>Document</title>
 </head>
 <body>
+    <!-- This is for description of the Site -->
     <nav class="navbar navbar-dark bg-dark">
         <span class="navbar-brand mb-0 h1 w-100 text-center">Weather Dashboard</span>
       </nav>
       <main>
+          <!-- Search bar and buttons after JS appends for cities searched -->
           <div class="container">
               <div class="row">
                   <div class="col-4 search-title">
@@ -22,8 +24,10 @@
                             <div class="input-group-append">
                                 <button class="btn btn-outline-secondary bg-primary" type="button" id="button-addon2"><i class="fas fa-search"></i></button>
                         </div>
+                        <ul id="history" class="list-group"></ul>
                     </div>  
                   </div>
+                  <!-- Element for current weather data on city last selected -->
                   <div class="col-8">
                     <div class="row">
                         <div class="col-12 border border-dark m-3 rounded">
@@ -55,6 +59,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- 5-day forecast for currently selected location -->
                     <div class="row">
                         <div class="col-12">
                             <h3>5-day Forecast:</h3>
@@ -72,10 +77,12 @@
           </div>
       </main>
 
-
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
       <script>
-        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=Seattle&appid=ef8d3deaadba22efae141ac1cdaa4f1c"
+        const apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=Seattle&appid=v"
         console.log(apiUrl)
+
+
 
       </script>
 </body>
