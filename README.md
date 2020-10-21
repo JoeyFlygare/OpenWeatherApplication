@@ -13,7 +13,13 @@
 To get this application of the ground I employed the use of OpenWeathers API in order to retrieve current weather conditions of the locations the users insert into the search bar. Using AJAX calls and the like I parsed the information into a current weather container and a 5 day future forecast set of cards for the user to gain information from.
 
 ## Deployed Site
+* Site
 
+    <img src="./assets/images/Capture.PNG">
+
+* Search Function
+
+    <img src="http://g.recordit.co/4bpQyUcUDp.gif" alt="Search Function Demo">
 
 https://joeyflygare.github.io/OpenWeatherApplication/
 
