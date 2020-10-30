@@ -22,7 +22,7 @@ function createWeatherData() {
         event.preventDefault();
         var userInput = $("#location").val().toLowerCase().trim();
     } else if (event.target.matches("li") && btnClick) {
-        var userInput = event.target.getAttribute("data-city").toLowerCase().trim();;
+        var userInput = event.target.getAttribute("cityData").toLowerCase().trim();;
     } else {
         return;
     }
@@ -147,15 +147,15 @@ function createUVIndexColor(x) {
     
 
     if (x >= 1.00 && x <= 2.99) {
-        $("#uvIndexBG").attr("style", "background-color:rgb(67, 185, 30);");
+        $("#uvBG").attr("style", "background-color:rgb(67, 185, 30);");
     } else if (x >= 3.00 && x <= 5.99) {
-        $("#uvIndexBG").attr("style", "background-color:rgb(252, 199, 33);");
+        $("#uvBG").attr("style", "background-color:rgb(252, 199, 33);");
     } else if (x >= 6.00 && x <= 7.99) {
-        $("#uvIndexBG").attr("style", "background-color:rgb(251, 116, 27);");
+        $("#uvBG").attr("style", "background-color:rgb(251, 116, 27);");
     } else if (x >= 8.00 && x <= 10.99) {
-        $("#uvIndexBG").attr("style", "background-color:rgb(248, 17, 22);");
+        $("#uvBG").attr("style", "background-color:rgb(248, 17, 22);");
     } else {
-        $("#uvIndexBG").attr("style", "background-color:rgb(134, 111, 255);");
+        $("#uvBG").attr("style", "background-color:rgb(134, 111, 255);");
     }
 }
 
@@ -168,7 +168,7 @@ function createSearchHistory() {
 
         newString = capLetters(localStorage.getItem(i));
         let cityLi = $("<li>");
-        cityLi.attr("data-city", newString);
+        cityLi.attr("cityData", newString);
         cityLi.addClass("list-group-item");
         cityLi.text(newString);
         $("#history").append(cityLi);
@@ -195,7 +195,7 @@ if (localStorage.length !== 0) {
 
 
 $(document).ajaxError(function () {
-    alert("The city you've searched for is not valid or not in the database!");
+    alert("Location not in database!");
     localStorage.removeItem(localStorage.length - 1);
     createSearchHistory();
 });
